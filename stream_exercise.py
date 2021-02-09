@@ -1,5 +1,3 @@
-
-
 class StreamProcessor(object):
     """
     Write a stream processor class that does the following:
@@ -61,7 +59,12 @@ class StreamProcessor(object):
         # Just some example syntax, you can read two digits from the head of the
         # stream using the following code:
         #
-        # digits = self._stream.read(2)
-
-
+        for count in range(0,10):
+            digits = self._stream.read(2)
+            if total > 199 or len(digits) < 2 :
+                break
+            else:
+                count += 1
+                num = int(digits)
+                total = total + num
         return count
